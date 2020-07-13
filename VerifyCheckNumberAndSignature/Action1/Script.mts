@@ -71,7 +71,6 @@ Public Function FindPageForTextContent(ByRef text)
       Window("Adobe Acrobat Pro DC").Type micEsc  'hide find tool
 End Function
 
-
 Public Function IsSignatureValidForCurrentPage
 	Window("Adobe Acrobat Pro DC").WinObject("AVPageView").Type micPgDwn
 	if Window("Adobe Acrobat Pro DC").InsightObject("Signature1").Exist(0) then
@@ -81,9 +80,6 @@ Public Function IsSignatureValidForCurrentPage
        	Reporter.ReportEvent micFail, "IsSignatureValidForCurrentPage", "Signature does not match"
     End  If
 End Function
- @@ hightlight id_;_328614_;_script infofile_;_ZIP::ssf1.xml_;_
-
-
 
 Public Function PrepareForReplay
        Window("Adobe Acrobat Pro DC").Maximize
@@ -116,17 +112,9 @@ Public Function VerifyCheckNumberAndSignatureFromPage(ByRef pageNumber, ByRef ch
        End If
 End Function
  
- 
- 
- 
 OpenPDFDocument "C:\Check.pdf"
 PrepareForReplay 'run this first time to ensure right settings in adobe pdf
 
 print FindPageForTextContent("1000013580") ' call this if you need to find a particular page number for specific text
 VerifyCheckNumberAndSignatureFromPage 3,1000013571 ' call this to verify that a particular pdf page maches a check number and a signature @@ hightlight id_;_263510_;_script infofile_;_ZIP::ssf2.xml_;_
-
-
-
-
-
 
